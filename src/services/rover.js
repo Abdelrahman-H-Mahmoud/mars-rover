@@ -2,11 +2,18 @@ class Rover {
 
   /**
    * @param {object} initCoordinates 
-   * @param {function} strValidator 
+   * @param {function} moveStrValidator 
    */
-  constructor(initCoordinates, strValidator) {
+  constructor(initCoordinates, moveStrValidator) {
     this.initCoordinates = initCoordinates;
-    this.strValidator = strValidator;
+    this.moveStrValidator = moveStrValidator;
+  }
+
+  move(movePattern) {
+    if (!this.moveStrValidator(movePattern)) {
+      return null;
+    }
+    return this.initCoordinates;
   }
 }
 
