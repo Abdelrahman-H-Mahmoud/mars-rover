@@ -6,7 +6,7 @@ describe("Validate Rover Service", () => {
   const initCoordinates = {
     x: 4,
     y: 2,
-    direction: DIRECTIONS.EAST
+    direction: DIRECTIONS.EAST.value
   };
   beforeEach(function (done) {
     rover = new Rover(initCoordinates, validateString);
