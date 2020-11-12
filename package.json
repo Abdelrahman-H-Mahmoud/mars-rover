@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test/**/*.js --exit"
+    "test": "nyc mocha test/**/*.js --exit"
   },
   "keywords": [],
   "author": "",
@@ -12,7 +12,8 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
-    "mocha": "^8.2.1"
+    "mocha": "^8.2.1",
+    "nyc": "^15.1.0"
   },
   "dependencies": {
     "express": "^4.17.1"
