@@ -22,7 +22,7 @@ docker build -t mars-rover
 ```
 then
 ```bash
-docker run mars-rover
+docker -p 3000:3000 run mars-rover
 ```
 ## Usage
 you can use postman and send a `GET` request to this endpoint

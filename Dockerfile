@@ -13,8 +13,5 @@ RUN npm install
 # Copy source code
 COPY . /app
 
-# Expose API port to the outside
-EXPOSE 3001
-
 # Launch application
 CMD nodemon index.js
