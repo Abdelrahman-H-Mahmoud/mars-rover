@@ -92,5 +92,25 @@ describe("moving strategies", () => {
       expect(currCoordinates.x).to.equal(5);
       done();
     });
+    it("should move forward in y direction case north", (done) => {
+      let currCoordinates = {
+        x: 4,
+        y: 2,
+        direction: DIRECTIONS.NORTH.value,
+      };
+      moveForward(currCoordinates);
+      expect(currCoordinates.y).to.equal(3);
+      done();
+    });
+    it("should move forward in y direction case south", (done) => {
+      let currCoordinates = {
+        x: 4,
+        y: 2,
+        direction: DIRECTIONS.SOUTH.value,
+      };
+      moveForward(currCoordinates);
+      expect(currCoordinates.y).to.equal(3);
+      done();
+    });
   });
 });
