@@ -2,6 +2,9 @@ const { getMoveStrategy } = require("../util/movingStrategyManager");
 class Rover {
   /**
    * @param {object} initCoordinates
+   * @param {number} initCoordinates.x
+   * @param {number} initCoordinates.y
+   * @param {string} initCoordinates.direction
    * @param {function} moveStrValidator
    */
   constructor(initCoordinates, moveStrValidator) {
