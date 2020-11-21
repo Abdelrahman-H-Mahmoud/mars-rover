@@ -16,8 +16,14 @@ const moveForward = (currCoordinates) => {
   currCoordinates[currDir.dir]++;
   return currCoordinates;
 };
+const moveBackward = (currCoordinates) => {
+  let currDir = DIRECTIONS[currCoordinates.direction];
+  currCoordinates[currDir.dir]--;
+  return currCoordinates;
+};
 module.exports = {
   moveRight,
   moveLeft,
   moveForward,
+  moveBackward
 };

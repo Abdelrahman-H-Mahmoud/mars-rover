@@ -3,6 +3,7 @@ const {
   moveRight,
   moveLeft,
   moveForward,
+  moveBackward
 } = require("../../src/util/movingStrategies");
 const DIRECTIONS = require("../../src/const/directions");
 
@@ -110,6 +111,49 @@ describe("moving strategies", () => {
       };
       moveForward(currCoordinates);
       expect(currCoordinates.y).to.equal(3);
+      done();
+    });
+  });
+
+  describe("move backward strategy",()=>{
+    it("should move backward in x direction case east", (done) => {
+      let currCoordinates = {
+        x: 4,
+        y: 2,
+        direction: DIRECTIONS.EAST.value,
+      };
+      moveBackward(currCoordinates);
+      expect(currCoordinates.x).to.equal(3);
+      done();
+    });
+    it("should move backward in x direction case west", (done) => {
+      let currCoordinates = {
+        x: 4,
+        y: 2,
+        direction: DIRECTIONS.WEST.value,
+      };
+      moveBackward(currCoordinates);
+      expect(currCoordinates.x).to.equal(3);
+      done();
+    });
+    it("should move backward in y direction case north", (done) => {
+      let currCoordinates = {
+        x: 4,
+        y: 2,
+        direction: DIRECTIONS.NORTH.value,
+      };
+      moveBackward(currCoordinates);
+      expect(currCoordinates.y).to.equal(1);
+      done();
+    });
+    it("should move backward in y direction case south", (done) => {
+      let currCoordinates = {
+        x: 4,
+        y: 2,
+        direction: DIRECTIONS.SOUTH.value,
+      };
+      moveBackward(currCoordinates);
+      expect(currCoordinates.y).to.equal(1);
       done();
     });
   });
