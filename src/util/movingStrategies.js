@@ -5,13 +5,19 @@ const moveRight = (currCoordinates) => {
   return currCoordinates;
 };
 
-const moveLeft=(currCoordinates)=>{
+const moveLeft = (currCoordinates) => {
   let currDir = DIRECTIONS[currCoordinates.direction];
   currCoordinates.direction = currDir.prev;
   return currCoordinates;
-}
+};
 
+const moveForward = (currCoordinates) => {
+  let currDir = DIRECTIONS[currCoordinates.direction];
+  currCoordinates[currDir.dir]++;
+  return currCoordinates;
+};
 module.exports = {
   moveRight,
-  moveLeft
+  moveLeft,
+  moveForward,
 };
