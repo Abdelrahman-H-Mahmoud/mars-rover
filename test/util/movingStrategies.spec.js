@@ -46,6 +46,24 @@ describe("moving strategies",()=>{
       expect(currCoordinates.direction).to.equal(DIRECTIONS.NORTH.value);
       done();
     });
+    it("should move left and the new direction is west",(done)=>{
+      moveLeft(currCoordinates);
+      expect(currCoordinates).to.have.own.property('direction');
+      expect(currCoordinates.direction).to.equal(DIRECTIONS.WEST.value);
+      done();
+    });
+    it("should move left and the new direction is south",(done)=>{
+      moveLeft(currCoordinates);
+      expect(currCoordinates).to.have.own.property('direction');
+      expect(currCoordinates.direction).to.equal(DIRECTIONS.SOUTH.value);
+      done();
+    });
+    it("should move left and the new direction is east",(done)=>{
+      moveLeft(currCoordinates);
+      expect(currCoordinates).to.have.own.property('direction');
+      expect(currCoordinates.direction).to.equal(DIRECTIONS.EAST.value);
+      done();
+    });
   });
   
 })
