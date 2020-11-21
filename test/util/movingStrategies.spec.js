@@ -1,5 +1,5 @@
 const { expect } = require("chai");
-const { moveRight } = require("../../src/util/movingStrategies");
+const { moveRight, moveLeft } = require("../../src/util/movingStrategies");
 const DIRECTIONS = require('../../src/const/directions');
 
 describe("moving strategies",()=>{
@@ -33,6 +33,19 @@ describe("moving strategies",()=>{
       expect(currCoordinates.direction).to.equal(DIRECTIONS.EAST.value);
       done();
     });
-  })
+  });
+  describe("move left strategy",()=>{
+    let currCoordinates={
+      x: 4,
+      y: 2,
+      direction: DIRECTIONS.EAST.value
+    };
+    it("should move left and the new direction is north",(done)=>{
+      moveLeft(currCoordinates);
+      expect(currCoordinates).to.have.own.property('direction');
+      expect(currCoordinates.direction).to.equal(DIRECTIONS.NORTH.value);
+      done();
+    });
+  });
   
 })
