@@ -1,9 +1,8 @@
-const DIRECTIONS = require('../const/directions');
+const { getMoveStrategy } = require("../util/movingStrategyManager");
 class Rover {
-
   /**
-   * @param {object} initCoordinates 
-   * @param {function} moveStrValidator 
+   * @param {object} initCoordinates
+   * @param {function} moveStrValidator
    */
   constructor(initCoordinates, moveStrValidator) {
     this.initCoordinates = initCoordinates;
@@ -11,8 +10,8 @@ class Rover {
   }
 
   /**
-   * 
-   * @param {string} movePattern 
+   *
+   * @param {string} movePattern
    */
   move(movePattern) {
     if (!this.moveStrValidator(movePattern)) {
@@ -21,28 +20,8 @@ class Rover {
     for (let i = 0; i < movePattern.length; i++) {
       const char = movePattern[i];
       let currDir = null;
-      switch (char) {
-        case "F":
-        case "f":
-          currDir = DIRECTIONS[this.initCoordinates.direction];
-          this.initCoordinates[currDir.dir]++;
-          break;
-        case "B":
-        case "b":
-          currDir = DIRECTIONS[this.initCoordinates.direction];
-          this.initCoordinates[currDir.dir]--;
-          break;
-        case "L":
-        case "l":
-          currDir = DIRECTIONS[this.initCoordinates.direction];
-          this.initCoordinates.direction = currDir.prev;
-          break;
-        case "R":
-        case "r":
-          currDir = DIRECTIONS[this.initCoordinates.direction];
-          this.initCoordinates.direction = currDir.next;
-          break;
-      }
+      let moveStrategy = getMoveStrategy(char);
+      moveStrategy(this.initCoordinates);
     }
     return this.initCoordinates;
   }
