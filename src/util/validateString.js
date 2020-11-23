@@ -6,7 +6,7 @@
 const validateString = (str) => {
   if (!str || typeof str !== "string")
     return false;
-  let strRegex = new RegExp("^[FBLR]+$", "i");
+  const strRegex = new RegExp("^[FBLR]+$", "i");
   return strRegex.test(str);
 }
 

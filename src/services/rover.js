@@ -8,7 +8,7 @@ class Rover {
    * @param {function} moveStrValidator
    */
   constructor(initCoordinates, moveStrValidator) {
-    this.initCoordinates = initCoordinates;
+    this.coordinates = initCoordinates;
     this.moveStrValidator = moveStrValidator;
   }
 
@@ -22,11 +22,10 @@ class Rover {
     }
     for (let i = 0; i < movePattern.length; i++) {
       const char = movePattern[i];
-      let currDir = null;
       let moveStrategy = getMoveStrategy(char);
-      moveStrategy(this.initCoordinates);
+      moveStrategy(this.coordinates);
     }
-    return this.initCoordinates;
+    return this.coordinates;
   }
 }
 

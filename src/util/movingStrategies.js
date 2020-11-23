@@ -6,7 +6,7 @@ const DIRECTIONS = require("../const/directions");
  * @param {string} currCoordinates.direction
  */
 const moveRight = (currCoordinates) => {
-  let currDir = DIRECTIONS[currCoordinates.direction];
+  const currDir = DIRECTIONS[currCoordinates.direction];
   currCoordinates.direction = currDir.next;
   return currCoordinates;
 };
@@ -18,7 +18,7 @@ const moveRight = (currCoordinates) => {
  * @param {string} currCoordinates.direction
  */
 const moveLeft = (currCoordinates) => {
-  let currDir = DIRECTIONS[currCoordinates.direction];
+  const currDir = DIRECTIONS[currCoordinates.direction];
   currCoordinates.direction = currDir.prev;
   return currCoordinates;
 };
@@ -30,7 +30,7 @@ const moveLeft = (currCoordinates) => {
  * @param {string} currCoordinates.direction
  */
 const moveForward = (currCoordinates) => {
-  let currDir = DIRECTIONS[currCoordinates.direction];
+  const currDir = DIRECTIONS[currCoordinates.direction];
   currCoordinates[currDir.dir]++;
   return currCoordinates;
 };
@@ -42,7 +42,7 @@ const moveForward = (currCoordinates) => {
  * @param {string} currCoordinates.direction
  */
 const moveBackward = (currCoordinates) => {
-  let currDir = DIRECTIONS[currCoordinates.direction];
+  const currDir = DIRECTIONS[currCoordinates.direction];
   currCoordinates[currDir.dir]--;
   return currCoordinates;
 };

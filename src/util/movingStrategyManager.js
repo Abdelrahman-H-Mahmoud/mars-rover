@@ -7,17 +7,13 @@ const {
 
 const mapStrategies={
   f:moveForward,
-  F:moveForward,
   b:moveBackward,
-  B:moveBackward,
   l:moveLeft,
-  L:moveLeft,
-  r:moveRight,
-  R:moveRight
+  r:moveRight
 };
 
 const getMoveStrategy=(moveChar)=>{
-  return mapStrategies[moveChar];
+  return mapStrategies[moveChar.toLowerCase()];
 }
 
 module.exports={
